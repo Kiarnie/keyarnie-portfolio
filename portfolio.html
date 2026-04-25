@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Keyarnie Collins Grimster — Senior Marketing Manager</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#1a3a5c;
+  --accent:#2563eb;
+  --accent2:#7c3aed;
+  --light:#f0f4f8;
+  --text:#1e293b;
+  --muted:#64748b;
+  --border:#e2e8f0;
+  --white:#fff;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,sans-serif;color:var(--text);background:var(--white);line-height:1.6}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--border);padding:0 2rem}
+.nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px}
+.nav-logo{font-weight:700;font-size:1rem;color:var(--navy);letter-spacing:-.01em}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{text-decoration:none;font-size:.875rem;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--navy)}
+
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--navy) 0%,#2d5a8e 100%);color:var(--white);padding:5rem 2rem 4rem}
+.hero-inner{max-width:900px;margin:0 auto}
+.hero-tag{display:inline-block;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:20px;font-size:.8rem;padding:.25rem .85rem;margin-bottom:1.25rem;letter-spacing:.05em;text-transform:uppercase}
+.hero h1{font-size:clamp(2rem,5vw,3.25rem);font-weight:700;line-height:1.15;margin-bottom:.75rem}
+.hero h1 span{color:#93c5fd}
+.hero-sub{font-size:1.1rem;opacity:.85;max-width:620px;margin-bottom:2rem}
+.hero-pills{display:flex;flex-wrap:wrap;gap:.5rem}
+.pill{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:20px;font-size:.8rem;padding:.3rem .9rem;color:rgba(255,255,255,.9)}
+
+/* SECTIONS */
+section{padding:4rem 2rem}
+section:nth-child(even){background:var(--light)}
+.section-inner{max-width:1100px;margin:0 auto}
+.section-label{font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.section-title{font-size:clamp(1.4rem,3vw,2rem);font-weight:700;color:var(--navy);margin-bottom:.5rem}
+.section-desc{color:var(--muted);max-width:640px;margin-bottom:2.5rem}
+
+/* SKILL AREAS */
+.areas-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem}
+.area-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.5rem}
+.area-card h3{font-size:1rem;font-weight:600;color:var(--navy);margin-bottom:.75rem}
+.area-card ul{list-style:none;display:flex;flex-direction:column;gap:.4rem}
+.area-card li{font-size:.875rem;color:var(--muted);padding-left:1rem;position:relative}
+.area-card li::before{content:'→';position:absolute;left:0;color:var(--accent);font-size:.75rem;top:.1em}
+
+/* WORK HIGHLIGHTS */
+.highlights-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.highlight-card{background:var(--white);border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.highlight-card .hc-top{background:var(--navy);padding:1.25rem 1.5rem}
+.highlight-card .hc-top h3{color:var(--white);font-size:1rem;font-weight:600;margin-bottom:.25rem}
+.highlight-card .hc-top .hc-co{font-size:.8rem;color:#93c5fd}
+.highlight-card .hc-body{padding:1.25rem 1.5rem}
+.highlight-card .hc-body p{font-size:.875rem;color:var(--muted);margin-bottom:1rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.tag{font-size:.75rem;background:#eff6ff;color:#1d4ed8;border-radius:6px;padding:.2rem .6rem;font-weight:500}
+.tag.purple{background:#f5f3ff;color:#6d28d9}
+.tag.green{background:#f0fdf4;color:#15803d}
+
+/* IMPACT NUMBERS */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+.stat-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.5rem;text-align:center}
+.stat-num{font-size:2rem;font-weight:700;color:var(--navy);line-height:1}
+.stat-label{font-size:.8rem;color:var(--muted);margin-top:.35rem}
+
+/* CAPABILITIES */
+.caps-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.75rem}
+.cap-item{display:flex;align-items:center;gap:.6rem;font-size:.875rem;color:var(--text)}
+.cap-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0}
+
+/* TESTIMONIALS */
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
+.t-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.5rem}
+.t-quote{font-size:.9rem;color:var(--text);line-height:1.6;margin-bottom:1rem;font-style:italic}
+.t-author{font-size:.8rem;font-weight:600;color:var(--navy)}
+.t-role{font-size:.75rem;color:var(--muted)}
+
+/* CONTACT */
+.contact-box{background:var(--navy);color:var(--white);border-radius:16px;padding:3rem;text-align:center;max-width:680px;margin:0 auto}
+.contact-box h2{font-size:1.75rem;margin-bottom:.5rem}
+.contact-box p{opacity:.8;margin-bottom:2rem}
+.contact-links{display:flex;justify-content:center;flex-wrap:wrap;gap:1rem}
+.contact-btn{display:inline-block;padding:.7rem 1.5rem;border-radius:8px;font-size:.9rem;font-weight:600;text-decoration:none;transition:opacity .2s}
+.contact-btn:hover{opacity:.85}
+.contact-btn.primary{background:#93c5fd;color:var(--navy)}
+.contact-btn.outline{border:1px solid rgba(255,255,255,.35);color:var(--white)}
+
+/* FOOTER */
+footer{text-align:center;padding:1.5rem;font-size:.8rem;color:var(--muted);border-top:1px solid var(--border)}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <span class="nav-logo">KCG</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#impact">Impact</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#testimonials">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Senior Marketing Manager</div>
+    <h1>Keyarnie <span>Collins Grimster</span></h1>
+    <p class="hero-sub">Full-funnel marketing leader with deep experience across B2B and B2C — from omnichannel campaign strategy to team culture and change management.</p>
+    <div class="hero-pills">
+      <span class="pill">Campaign Strategy</span>
+      <span class="pill">Email Marketing</span>
+      <span class="pill">Content & SEO</span>
+      <span class="pill">Trade Marketing</span>
+      <span class="pill">Partnership Events</span>
+      <span class="pill">Data-led Reporting</span>
+      <span class="pill">Cross-team Collaboration</span>
+      <span class="pill">Change Management</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <p class="section-label">About</p>
+    <h2 class="section-title">Strategic. Data-led. Human.</h2>
+    <p class="section-desc">I'm a senior marketing manager who thrives at the intersection of big-picture strategy and hands-on execution. Across Cashrewards, SiteMinder, Groupon, B&Q / Kingfisher, and more, I've planned and delivered complex campaigns across 20+ channels, led programs of organisational change, and built the kind of team culture people actually want to show up for.</p>
+
+    <div class="areas-grid">
+      <div class="area-card">
+        <h3>Campaign Strategy & Planning</h3>
+        <ul>
+          <li>Integrated omnichannel campaign calendars</li>
+          <li>B2B &amp; B2C campaign planning</li>
+          <li>Assortment and trade planning</li>
+          <li>EOFY, Black Friday, Click Frenzy &amp; seasonal campaigns</li>
+        </ul>
+      </div>
+      <div class="area-card">
+        <h3>Content & Digital</h3>
+        <ul>
+          <li>Blog writing &amp; WordPress publishing</li>
+          <li>eBook creation &amp; lead generation</li>
+          <li>Email marketing (EN + ES databases)</li>
+          <li>Paid &amp; organic social (FB, LinkedIn, Twitter)</li>
+        </ul>
+      </div>
+      <div class="area-card">
+        <h3>Reporting & Analytics</h3>
+        <ul>
+          <li>Trade marketing &amp; run-rate reporting</li>
+          <li>Customised automated reports</li>
+          <li>A/B split testing &amp; MQL/SQL analysis</li>
+          <li>Target gap analysis &amp; delta tracking</li>
+        </ul>
+      </div>
+      <div class="area-card">
+        <h3>Events & Partnerships</h3>
+        <ul>
+          <li>Global trade shows, summits &amp; seminars</li>
+          <li>Webinar scripting, hosting &amp; distribution</li>
+          <li>Customer testimonial video production</li>
+          <li>Internal leadership &amp; culture events</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE HIGHLIGHTS -->
+<section id="experience">
+  <div class="section-inner">
+    <p class="section-label">Experience highlights</p>
+    <h2 class="section-title">Work I'm proud of</h2>
+    <p class="section-desc">A selection of the campaigns, programs, and projects I've led across my career.</p>
+
+    <div class="highlights-grid">
+      <div class="highlight-card">
+        <div class="hc-top">
+          <h3>Integrated Campaign Planning</h3>
+          <span class="hc-co">Cashrewards</span>
+        </div>
+        <div class="hc-body">
+          <p>Owned the end-to-end marketing calendar for H1 &amp; H2, coordinating 20+ channels across push, email, paid and organic social. Led campaign briefing, execution, QA and performance reporting for major trading events including Black Friday, Click Frenzy and EOFY.</p>
+          <div class="tags">
+            <span class="tag">Campaign Strategy</span>
+            <span class="tag purple">Automation</span>
+            <span class="tag green">Multi-channel</span>
+          </div>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="hc-top">
+          <h3>B2B Campaign Calendar & Sales Enablement</h3>
+          <span class="hc-co">SiteMinder</span>
+        </div>
+        <div class="hc-body">
+          <p>Managed global B2B marketing campaign calendars covering EDMs, external print, paid social and events across 9+ regions. Presented campaign strategy to Sales and Revenue teams, created regional case studies, and led cross-team workshopping sessions.</p>
+          <div class="tags">
+            <span class="tag">B2B Marketing</span>
+            <span class="tag purple">Sales Enablement</span>
+            <span class="tag green">Global Campaigns</span>
+          </div>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="hc-top">
+          <h3>Programs of Change & Lifecycle Marketing</h3>
+          <span class="hc-co">Cashrewards</span>
+        </div>
+        <div class="hc-body">
+          <p>Led delivery of major transformation initiatives including the launch of Beyond Yaytopia, new automated email templates, a Monday.com migration, a monthly MAU trigger and 65+ personalised comms touchpoints to drive 3rd shop behaviour.</p>
+          <div class="tags">
+            <span class="tag">Change Management</span>
+            <span class="tag purple">Lifecycle Marketing</span>
+            <span class="tag green">Automation</span>
+          </div>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="hc-top">
+          <h3>Customer Testimonial Video Production</h3>
+          <span class="hc-co">SiteMinder</span>
+        </div>
+        <div class="hc-body">
+          <p>Coordinated on-site filming, wrote scripts, and produced video testimonials in Sydney (ANZ) and Manila (Asia). The Asia testimonial was turned around in under two weeks and featured on the website homepage, delivering high ROI for the company.</p>
+          <div class="tags">
+            <span class="tag">Video Production</span>
+            <span class="tag purple">Content Strategy</span>
+            <span class="tag green">ROI</span>
+          </div>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="hc-top">
+          <h3>Partnership Events (Global)</h3>
+          <span class="hc-co">SiteMinder</span>
+        </div>
+        <div class="hc-body">
+          <p>Organised trade shows, summits and seminars globally including a joint SiteMinder &amp; Airbnb event in Phuket, Thailand. Managed exhibition stand design, merchandise, stakeholder liaising, social ads and invitation campaigns.</p>
+          <div class="tags">
+            <span class="tag">Events</span>
+            <span class="tag purple">Partnerships</span>
+            <span class="tag green">Global</span>
+          </div>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="hc-top">
+          <h3>Internal Events & Culture Leadership</h3>
+          <span class="hc-co">Kingfisher / Cashrewards</span>
+        </div>
+        <div class="hc-body">
+          <p>Coordinated Kingfisher Quarterly Leadership Days (London &amp; Barcelona), led Cashrewards' Marketing Fun Club, and championed mental health advocacy during COVID lockdowns — keeping distributed teams engaged and connected.</p>
+          <div class="tags">
+            <span class="tag">Culture</span>
+            <span class="tag purple">MH Advocacy</span>
+            <span class="tag green">Leadership</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section id="impact">
+  <div class="section-inner">
+    <p class="section-label">Impact</p>
+    <h2 class="section-title">Numbers that tell the story</h2>
+    <p class="section-desc">Key figures from campaigns and programs I've owned or contributed to.</p>
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num">20+</div>
+        <div class="stat-label">Channels managed in a single EOFY campaign</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">60k</div>
+        <div class="stat-label">Global blog newsletter subscribers</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">30k</div>
+        <div class="stat-label">Global webinar newsletter subscribers</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">65+</div>
+        <div class="stat-label">Personalised lifecycle comms touchpoints</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">9</div>
+        <div class="stat-label">Regional case study eDMs (multilingual)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">40+</div>
+        <div class="stat-label">Additional push notification touchpoints via lifecycle rollout</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <p class="section-label">Skills & tools</p>
+    <h2 class="section-title">What I bring to the table</h2>
+    <p class="section-desc">A blend of strategic thinking and hands-on capability across every stage of the marketing funnel.</p>
+    <div class="caps-list">
+      <div class="cap-item"><div class="cap-dot"></div>Integrated campaign planning &amp; execution</div>
+      <div class="cap-item"><div class="cap-dot"></div>Email marketing &amp; automation (Marketo, Salesforce MC)</div>
+      <div class="cap-item"><div class="cap-dot"></div>B2B &amp; B2C marketing strategy</div>
+      <div class="cap-item"><div class="cap-dot"></div>Paid social — Facebook, LinkedIn, Instagram</div>
+      <div class="cap-item"><div class="cap-dot"></div>Organic social media management</div>
+      <div class="cap-item"><div class="cap-dot"></div>Content writing &amp; SEO (WordPress)</div>
+      <div class="cap-item"><div class="cap-dot"></div>eBook &amp; landing page creation</div>
+      <div class="cap-item"><div class="cap-dot"></div>Trade marketing &amp; run-rate reporting</div>
+      <div class="cap-item"><div class="cap-dot"></div>A/B split testing &amp; MQL/SQL analysis</div>
+      <div class="cap-item"><div class="cap-dot"></div>Assortment &amp; trade planning</div>
+      <div class="cap-item"><div class="cap-dot"></div>Event &amp; webinar management (global)</div>
+      <div class="cap-item"><div class="cap-dot"></div>Video scripting &amp; production coordination</div>
+      <div class="cap-item"><div class="cap-dot"></div>Cross-functional stakeholder management</div>
+      <div class="cap-item"><div class="cap-dot"></div>Monday.com, Asana, Google Suite, Excel</div>
+      <div class="cap-item"><div class="cap-dot"></div>Change management &amp; team culture</div>
+      <div class="cap-item"><div class="cap-dot"></div>Multilingual campaign management (EN, ES, FR, IT, DE, PT)</div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-inner">
+    <p class="section-label">Colleague reviews</p>
+    <h2 class="section-title">What people say</h2>
+    <p class="section-desc">Feedback from colleagues at Cashrewards, Groupon and beyond.</p>
+    <div class="testimonials-grid">
+      <div class="t-card">
+        <p class="t-quote">"You have contributed so much to our team and I love working with you! Your energy is amazing and your mind is even more so. I love your commitment, dedication, and constant strive for improvement. You're an absolute star."</p>
+        <div class="t-author">Team member</div>
+        <div class="t-role">Cashrewards</div>
+      </div>
+      <div class="t-card">
+        <p class="t-quote">"Kinetic Kiarnie — full of energy and action. I'm so sad to see you go, but I know you'll do amazing things."</p>
+        <div class="t-author">Lata Rani</div>
+        <div class="t-role">Colleague, Cashrewards</div>
+      </div>
+      <div class="t-card">
+        <p class="t-quote">"I will miss your infectious positive energy, your hustle and sarcastic humour. You have achieved so much and always supported everyone. The next place will be very lucky to have you."</p>
+        <div class="t-author">Luciana Sulistyo</div>
+        <div class="t-role">Colleague, Cashrewards</div>
+      </div>
+      <div class="t-card">
+        <p class="t-quote">"You are a smart woman and I know you will find the next amazing opportunity. Thank you for your contribution to Cashrewards over the past couple of years."</p>
+        <div class="t-author">Karen Healey</div>
+        <div class="t-role">Colleague, Cashrewards</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact-box">
+      <h2>Let's work together</h2>
+      <p>Open to senior marketing opportunities, consulting, and collaboration. Get in touch!</p>
+      <div class="contact-links">
+        <a href="mailto:your@email.com" class="contact-btn primary">Email me</a>
+        <a href="https://linkedin.com/in/yourprofile" class="contact-btn outline">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Keyarnie Collins Grimster · Senior Marketing Manager</p>
+</footer>
+
+</body>
+</html>
